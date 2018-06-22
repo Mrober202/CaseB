@@ -1,15 +1,28 @@
 {
   "name": "c-b-test",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "assert": "^1.4.1",
     "express": "^4.16.3"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mrober202/CaseB.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mrober202/CaseB/issues"
+  },
+  "homepage": "https://github.com/Mrober202/CaseB#readme",
+  "description": ""
 }
