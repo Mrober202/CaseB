@@ -26,20 +26,37 @@ var requestComplete = function() {
 var submitButtonHandler = function() {
   var enteredInput = document.getElementById("enter-info");
   var input = enteredInput.value;
+  if((input < 1) || (input > 4)) {
+   window.alert("Please enter enter a number between 0 and 5");
+ } else {
   var url = enquiryBuilder(input);
   var result = makeRequest(url, requestComplete);
+}
 }
 
 var showResult = function(apiResponse) {
   var list = document.getElementById("info-list");
   list.innerHTML = '';
-  console.log(apiResponse[0].cases[0].customer.forename);
   apiResponse.forEach(function(info) {
-    var li1 = document.createElement("ul");
-    li1.innerText = "Customer name: " + info.cases.customer.forename;
+    info.cases.forEach(function(nest) {
+      if (info.case_type_id == "1"){
 
-    list.appendChild(li1);
-  
+        var li1 = document.createElement("ul");
+        li1.innerText = "Customer name: " + nest.customer.forename + " " + nest.customer.surname;
+        var li2 = document.createElement("li");
+        li2.innerText = "Created at: " + nest.created_at.slice(0, 10);
+        var li3 = document.createElement("li");
+        li3.innerText = "Enquiry source: " + nest.enquiry_source;
+        var li4 = document.createElement("li");
+        li4.innerText = "Type: " + nest.case_type;
+
+        list.appendChild(li1);
+        list.appendChild(li2);
+        list.appendChild(li3);
+        list.appendChild(li4);
+      }
+    })
+    
   })
 }
 

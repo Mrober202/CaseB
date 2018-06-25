@@ -1,0 +1,26 @@
+header {
+  text-align: center;
+  color: darkgrey;
+  background-color: black;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+}
+h2 {
+  padding-top: 10px;
+  font-family: "Trebuchet MS" sans-serif;
+}
+
+p {
+  padding-top: 10px;
+}
+
+
+ul {
+  padding-top: 20px;
+  list-style-type: none;
+}
+
+#container {
+  text-align: center;
+}
