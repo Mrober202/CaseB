@@ -26,7 +26,7 @@ var requestComplete = function() {
 var submitButtonHandler = function() {
   var enteredInput = document.getElementById("enter-info");
   var input = enteredInput.value;
-  if((input < 1) || (input > 4)) {
+  if((input < 1) || (input > 4) || isNaN(input)) {
    window.alert("Please enter enter a number between 0 and 5");
  } else {
   var url = enquiryBuilder(input);
@@ -56,7 +56,7 @@ var showResult = function(apiResponse) {
         list.appendChild(li4);
       }
     })
-    
+
   })
 }
 
